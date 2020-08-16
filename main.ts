@@ -1,3 +1,31 @@
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
+    game.splash("6+")
+    info.changeScoreBy(6)
+    music.powerUp.play()
+    Six_Plus += 6
+    tiles.setTileAt(tiles.getTileLocation(1, 14), sprites.dungeon.floorDarkDiamond)
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile30, function (sprite, location) {
+    if (Divine_Sandwich == 0) {
+        game.splash("You Died LOL")
+        info.changeLifeBy(-1)
+    } else {
+        game.splash("His brain.... its too strong")
+        music.pewPew.play()
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
+    game.splash("Music Fills the air", "Angels sing")
+    game.splash("Your power is limitless")
+    game.splash("You are", "E N L I G H T E N E D")
+    info.changeScoreBy(6)
+    music.powerUp.play()
+    Divine_Sandwich += 1
+    scene.cameraShake(5, 1000)
+    mySprite.startEffect(effects.halo)
+    tiles.setTileAt(tiles.getTileLocation(1, 1), sprites.dungeon.floorDarkDiamond)
+    tiles.setTileAt(tiles.getTileLocation(7, 7), myTiles.tile25)
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, location) {
     info.changeScoreBy(1)
     music.powerUp.play()
@@ -6,6 +34,37 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     game.splash("We cannot win by ourselves", "We lack the IQ points required")
     tiles.setTileAt(tiles.getTileLocation(14, 2), sprites.castle.tileDarkGrass1)
     scene.cameraShake(4, 100)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (sprite, location) {
+    info.stopCountdown()
+    Stage_Level = 3
+    tiles.setTilemap(tiles.createTilemap(hex`100010000c0f0f0f0f0f0f0f160f0f0f0f0f0f0b09070511111b110411111b110411190a0905010104110102010211110202110a0911020311111101021111110302040a0911111119110311110311191111110a0903110411191111111119111111030a0911021103110311110311031101110a0919020111111112131111040102110a0904010211111114151111110201190a0911021103110311110311031102110a0903111111191111111119110411030a0917111119110311040311191111170a0911010311111103031111110302040a0911020111110311110311110201110a0906111119031104111a03170419180a0d10101010100e08080d10101010100e`, img`
+        2 2 2 2 2 2 2 2 . 2 2 2 2 2 2 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 . . . . . . . . . . . . . . 2 
+        2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 
+        `, [myTiles.transparency16,sprites.dungeon.hazardLava0,sprites.dungeon.hazardLava1,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark5,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.doorOpenSouth,sprites.dungeon.purpleOuterWest2,sprites.dungeon.purpleOuterEast2,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterSouth2,sprites.dungeon.floorDark2,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,sprites.dungeon.purpleSwitchUp,myTiles.tile26,myTiles.tile27,myTiles.tile28,myTiles.tile29,myTiles.tile30], TileScale.Sixteen))
+    game.splash("LEVEL 3")
+    info.startCountdown(80)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 15))
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile28, function (sprite, location) {
+    if (Divine_Sandwich == 0) {
+        game.splash("Expect Hell")
+        info.changeLifeBy(-1)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
     info.changeScoreBy(1)
@@ -42,6 +101,14 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
         `, [myTiles.transparency16,myTiles.tile5,myTiles.tile8,myTiles.tile10,myTiles.tile11,sprites.dungeon.floorLight0,sprites.dungeon.doorLockedEast,sprites.dungeon.doorLockedWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.hazardLava0,sprites.dungeon.hazardLava1,sprites.dungeon.floorMixed,sprites.dungeon.floorDark0,sprites.dungeon.floorDark1,sprites.dungeon.floorDark4,sprites.dungeon.floorDark3,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.greenOuterNorth0,sprites.dungeon.doorOpenNorth,sprites.castle.rock2,sprites.dungeon.floorLight1,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight3,sprites.dungeon.floorLight4,sprites.castle.rock0,sprites.castle.rock1,myTiles.tile18,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark5,sprites.dungeon.stairWest,myTiles.tile19,myTiles.tile20,sprites.dungeon.stairNorth], TileScale.Sixteen))
     game.splash("LEVEL 2")
     info.startCountdown(60)
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile29, function (sprite, location) {
+    game.splash("Watch out for the fireballs!")
+    game.splash("I'll protect you from the notifications!")
+    info.changeScoreBy(6)
+    music.powerUp.play()
+    Rodent_Companion += 1
+    tiles.setTileAt(tiles.getTileLocation(9, 14), sprites.dungeon.floorDarkDiamond)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava0, function (sprite, location) {
     game.splash("What's cookin?")
@@ -99,8 +166,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile19, function (sprite, locatio
     tiles.setTileAt(tiles.getTileLocation(14, 0), sprites.dungeon.floorLight1)
     tiles.setWallAt(tiles.getTileLocation(7, 8), false)
     tiles.setWallAt(tiles.getTileLocation(8, 8), false)
-    game.splash("Two Guardians Block Your Path")
-    game.splash("One tells only trues", "The other only lies")
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     if (Noodle_Energy == 0) {
@@ -131,6 +196,13 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, locatio
     tiles.setTileAt(tiles.getTileLocation(15, 13), sprites.castle.tileGrass1)
     scene.cameraShake(4, 100)
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile27, function (sprite, location) {
+    game.splash("Your cereal bowl finally flows", "Filled to the brim with bone juice")
+    info.changeScoreBy(1)
+    music.powerUp.play()
+    Bone_Juice += 1
+    tiles.setTileAt(tiles.getTileLocation(14, 14), sprites.dungeon.floorDarkDiamond)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.splash("What's cookin?")
     info.changeLifeBy(-1)
@@ -158,6 +230,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile18, function (sprite, locatio
     if (bossy1 == 0) {
         game.splash("I will lead you to safety")
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+        bossy1 += 1
     } else {
         if (lang1 == 0) {
             game.splash("You must speak with the other")
@@ -177,6 +250,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, locatio
     if (lang1 == 0) {
         game.splash("I will lead you to safety")
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+        lang1 += 1
     } else {
         if (bossy1 == 0) {
             game.splash("You must speak with the other")
@@ -204,6 +278,15 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, locatio
         tiles.setTileAt(tiles.getTileLocation(14, 10), sprites.dungeon.floorLight1)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
+    if ((Bone_Juice || Six_Plus) == 0) {
+        game.splash("You Died LOL")
+        info.changeLifeBy(-1)
+    } else {
+        game.splash("*caveman noise*", "We will defeat you..")
+        music.pewPew.play()
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
     game.splash("Brain Basta Acquired")
     info.changeScoreBy(1)
@@ -228,14 +311,19 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (
     } else {
         game.splash("Matt Rodent scurries through the hole")
         game.splash("The gates begin to open")
+        game.splash("Two Guardians Block Your Path")
+        game.splash("One tells only trues", "The other only lies")
     }
 })
 let Noodle_Energy = 0
+let Bone_Juice = 0
 let lang1 = 0
 let bossy1 = 0
 let Rodent_Companion = 0
 let reddit = 0
 let big_brain = 0
+let Divine_Sandwich = 0
+let Six_Plus = 0
 let Panther_Power = 0
 let Christlike = 0
 let Potable = 0
@@ -262,8 +350,8 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 140, 140)
-scene.setBackgroundColor(0)
+controller.moveSprite(mySprite, 120, 120)
+scene.setBackgroundColor(15)
 tiles.setTilemap(tiles.createTilemap(hex`100010002a1614160b0c0d1414162b14141514150b0c0e1414161516071216090a1411141416151409080808080a16090a142516150b0d11141414031615141116090a1514070f0c0c0c0c0d1607090a140712141c1b1c171b1c1b07141516141514072b220713121007171210111210131611161907191902071e2222221d102415071603191912190720111211181110071315190f0c0d190720120112181b17031b03191007101907201111111807101b12171919071119071f2121211a10071c071c10190f0e1909080808080a13101b101b111907101919191919041010111c172307190f08080a1911100405040410120712191919191919191906130728292627`, img`
     . . . . 2 2 2 . . . . . . . . . 
     2 2 2 . . . . . 2 2 . 2 2 . 2 . 
@@ -291,14 +379,15 @@ Stage_Level = 1
 Potable = 0
 Christlike = 0
 Panther_Power = 0
-let Six_Plus = 0
+Six_Plus = 0
 let God_Mode = 0
-let Divine_Sandwich = 0
+Divine_Sandwich = 0
 big_brain = 0
 reddit = 0
 Rodent_Companion = 0
 bossy1 = 0
 lang1 = 0
+Bone_Juice = 0
 forever(function () {
     if (Stage_Level == 2 && reddit == 0) {
         tiles.setTileAt(tiles.getTileLocation(1, 12), sprites.dungeon.floorLight0)
@@ -331,8 +420,8 @@ forever(function () {
         tiles.setTileAt(tiles.getTileLocation(4, 12), sprites.dungeon.floorLight0)
         tiles.setTileAt(tiles.getTileLocation(3, 12), myTiles.tile8)
         pause(500)
-        tiles.setTileAt(tiles.getTileLocation(3, 13), sprites.dungeon.floorLight0)
-        tiles.setTileAt(tiles.getTileLocation(2, 13), myTiles.tile8)
+        tiles.setTileAt(tiles.getTileLocation(3, 12), sprites.dungeon.floorLight0)
+        tiles.setTileAt(tiles.getTileLocation(2, 12), myTiles.tile8)
         pause(500)
         tiles.setTileAt(tiles.getTileLocation(2, 12), sprites.dungeon.floorLight0)
         tiles.setTileAt(tiles.getTileLocation(1, 12), myTiles.tile8)
@@ -340,5 +429,81 @@ forever(function () {
     }
 })
 forever(function () {
-    music.playMelody("E B C5 A B G A F ", 120)
+    if (Divine_Sandwich == 0) {
+        music.playMelody("E B C5 A B G A F ", 120)
+    } else {
+        music.playMelody("F G A G A C5 B G ", 150)
+    }
+})
+forever(function () {
+    if (Stage_Level == 3) {
+        tiles.setTileAt(tiles.getTileLocation(5, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 6), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(5, 6), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 7), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(5, 7), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 8), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(5, 8), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 9), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(5, 9), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 10), myTiles.tile28)
+    }
+})
+forever(function () {
+    if (Stage_Level == 3) {
+        tiles.setTileAt(tiles.getTileLocation(10, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(9, 5), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(9, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(8, 5), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(8, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(7, 5), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(7, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(6, 5), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(6, 5), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(5, 5), myTiles.tile28)
+    }
+})
+forever(function () {
+    if (Stage_Level == 3) {
+        tiles.setTileAt(tiles.getTileLocation(5, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(6, 10), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(6, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(7, 10), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(7, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(8, 10), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(8, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(9, 10), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(9, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 10), myTiles.tile28)
+    }
+})
+forever(function () {
+    if (Stage_Level == 3) {
+        tiles.setTileAt(tiles.getTileLocation(10, 10), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 9), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(10, 9), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 8), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(10, 8), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 7), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(10, 7), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 6), myTiles.tile28)
+        pause(1000)
+        tiles.setTileAt(tiles.getTileLocation(10, 6), sprites.dungeon.floorDark2)
+        tiles.setTileAt(tiles.getTileLocation(10, 5), myTiles.tile28)
+    }
 })
