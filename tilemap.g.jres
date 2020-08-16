@@ -154,6 +154,21 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile31": {
+        "data": "hwQQABAAAAC9VbvFXLu7u71bVVVVVVW1vVte9V+1u7u9W171/1VVVb1VXiX/X1W7XeVeIvL/VVVd7nIi////tVzuIvL////PXO5y8v///89d7iLy////VV3lvvX//1VbvVVe9f9fVbW9W171/1VVtb1bXvVfVbu1vVtVVVVbu7u9u1VbvLu7uw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile32": {
+        "data": "hwQQABAAAAD/Vf/1X/////9fVVVVVVX1/19e9V/1////X171/1VVVf9VXiX/X1X/X+VeIvL/VVVf7nIi////9V/uIvL////PX+5y8v///89f7iLy////VV/l/vX//1Vf/1Ve9f9fVfX/X171/1VV9f9fXvVfVf/1/19VVVVf/////1Vf/////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile33": {
+        "data": "hwQQABAAAAA/8//z///z/z/zP/P/M/P/P/8zMz/z//8/M/M/M/8z8z/+8/8zP/MzMz7z/z8z//8zLvL//zMz/+Mu8v///z8/437y////PwPjLiL///8/MzM+Iv//MzP/Pz4j8jPzM/8/PvP/M/M/8z8z8z8z//8z/z8zMz/z/z//Pz/z//P//w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
