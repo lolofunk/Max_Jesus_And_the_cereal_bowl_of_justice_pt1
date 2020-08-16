@@ -35,6 +35,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     Panther_Power += 1
     game.splash("Thank you", "We must save my brothers")
     game.splash("We cannot win by ourselves", "We lack the IQ points required")
+    game.splash("I've heard rumors", "A secret tree entry to the potable water")
     tiles.setTileAt(tiles.getTileLocation(14, 2), sprites.castle.tileDarkGrass1)
     scene.cameraShake(4, 100)
 })
@@ -61,7 +62,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (spr
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile28, function (sprite, location) {
     if (Divine_Sandwich == 0) {
         game.splash("Expect Hell")
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(8, 15))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(8, 14))
         info.changeLifeBy(-1)
     }
 })
@@ -110,7 +111,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile29, function (sprite, locatio
     tiles.setTileAt(tiles.getTileLocation(9, 14), sprites.dungeon.floorDarkDiamond)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava0, function (sprite, location) {
-    game.splash("What's cookin?")
+    game.splash("What's cookin good lookin?")
     tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 15))
     info.changeLifeBy(-1)
 })
@@ -220,7 +221,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile27, function (sprite, locatio
     tiles.setTileAt(tiles.getTileLocation(14, 14), sprites.dungeon.floorDarkDiamond)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
-    game.splash("What's cookin?")
+    game.splash("Feel the heat")
     info.changeLifeBy(-1)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 15))
 })
@@ -231,40 +232,22 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedSouth, function
     tiles.setTilemap(tiles.createTilemap(hex`100010000a0d0d0d0d0d0d0d140d0d0d0d0d0d090705030f0f190f020f0f190f020f170807031a1c020f1a1f1f1c0f0f1a1c0f08070f1b1d0f0f1b1e1e1d0f0f1b1d0208070f0f0f170f010f0f010f170f0f0f0807010f020f170f0f0f0f170f0f0f0108070f0f0f010f010f0f010f010f0f0f0807171a1c0f0f0f10110f0f021a1c0f0807021b1d0f0f0f12130f0f0f1b1d1708070f0f0f010f010f0f010f010f0f0f0807010f0f0f170f0f0f0f170f020f010807150f0f170f010f02010f170f0f1508070f1a1c0f0f0f01010f0f0f1a1c0208070f1b1d0f0f010f0f010f0f1b1d0f0807040f0f17010f020f180115021716080b0e0e0e0e0e0c06060b0e0e0e0e0e0c`, img`
         2 2 2 2 2 2 2 2 . 2 2 2 2 2 2 2 
         2 . . . . . . . . . . . . . . 2 
+        2 . 2 2 . . 2 2 2 2 . . 2 2 . 2 
+        2 . 2 2 . . 2 2 2 2 . . 2 2 . 2 
         2 . . . . . . . . . . . . . . 2 
         2 . . . . . . . . . . . . . . 2 
         2 . . . . . . . . . . . . . . 2 
+        2 . 2 2 . . . 2 2 . . . 2 2 . 2 
+        2 . 2 2 . . . 2 2 . . . 2 2 . 2 
         2 . . . . . . . . . . . . . . 2 
         2 . . . . . . . . . . . . . . 2 
         2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
-        2 . . . . . . . . . . . . . . 2 
+        2 . 2 2 . . . . . . . . 2 2 . 2 
+        2 . 2 2 . . . . . . . . 2 2 . 2 
         2 . . . . . . . . . . . . . . 2 
         2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 
         `, [myTiles.transparency16,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark5,myTiles.tile1,myTiles.tile2,myTiles.tile3,sprites.dungeon.doorOpenSouth,sprites.dungeon.purpleOuterWest2,sprites.dungeon.purpleOuterEast2,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterSouth2,sprites.dungeon.floorDark2,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,sprites.dungeon.purpleSwitchUp,myTiles.tile26,myTiles.tile27,myTiles.tile28,myTiles.tile29,myTiles.tile30,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.purpleInnerSouthWest,sprites.dungeon.purpleInnerNorthEast,sprites.dungeon.purpleInnerSouthEast,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterSouth1], TileScale.Sixteen))
     game.splash("LEVEL 3")
-    mySprite = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . e e e e e e . . . . . 
-        . . . . e e e e e e e e . . . . 
-        . . . . e e e e e e e e . . . . 
-        . . . . e e d d d d e e . . . . 
-        . . . . . e d f d f e . . . . . 
-        . . . . . . d d d d . . . . . . 
-        . . . . . . d d d d . . . . . . 
-        . . . 6 6 1 6 6 6 6 1 6 6 . . . 
-        . . . 6 6 1 6 6 6 6 1 6 6 . . . 
-        . . . . 6 1 6 6 6 1 1 6 . . . . 
-        . . . . 1 1 6 6 6 1 6 6 . . . . 
-        . . . . . 1 1 6 6 1 6 . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.doorOpenSouth)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
@@ -317,6 +300,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function 
         tiles.setTileAt(tiles.getTileLocation(7, 8), sprites.dungeon.floorDarkDiamond)
         tiles.setTileAt(tiles.getTileLocation(8, 8), sprites.dungeon.floorDarkDiamond)
         tiles.setTileAt(tiles.getTileLocation(8, 7), sprites.dungeon.floorDarkDiamond)
+        tiles.setWallAt(tiles.getTileLocation(7, 7), false)
+        tiles.setWallAt(tiles.getTileLocation(7, 8), false)
+        tiles.setWallAt(tiles.getTileLocation(8, 8), false)
+        tiles.setWallAt(tiles.getTileLocation(8, 7), false)
+        tiles.setTileAt(tiles.getTileLocation(8, 0), sprites.dungeon.purpleOuterNorth2)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, location) {
@@ -412,6 +400,7 @@ let mySprite: Sprite = null
 game.splash("MAX JESUS", "AND CEREAL BOWL OF JUSTICE")
 game.splash("W E L C O M E  T O  T H E", "~ T H U N D E R D O M E ~")
 effects.clouds.startScreenEffect(500)
+game.splash("Save the Panthermen!")
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
