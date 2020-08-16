@@ -8,7 +8,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
         game.splash("We still need bone juice")
     }
     if (1 == Bone_Juice) {
-        game.splash("We need the diving sandwich")
+        game.splash("We need the divine sandwich")
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile30, function (sprite, location) {
@@ -41,7 +41,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     Panther_Power += 1
     game.splash("Thank you", "We must save my brothers")
     game.splash("We cannot win by ourselves", "We lack the IQ points required")
-    game.splash("I've heard rumors", "A secret tree entry to the potable water")
+    game.splash("I've heard rumors of", "A secret tree entry to the potable water")
     tiles.setTileAt(tiles.getTileLocation(14, 2), sprites.castle.tileDarkGrass1)
     scene.cameraShake(4, 100)
 })
@@ -89,8 +89,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     info.stopCountdown()
     Stage_Level = 2
     info.setLife(3)
-    tiles.setTilemap(tiles.createTilemap(hex`10001000210419171717172828171717171a261e1f19150c09090923230909090b161a201e071506290f0e0f0f0e0f29071606211e0715060f1324131224130f0716061f210715060e1103241222110e0716061e1f0715060f1211122411120f0716061e1f0715060e2412131213140e0716061f1e181506290f0e13110e0f2907160621051f150a0808081d1d0808080d161b211a1e181c1c1c1c10101c1c1c1c1b10200605171e050117101f1021211010270f0605091f0e0f09051917171a0f0e0f290602211e1f1e1f21181c1c1b1e051f0f061e1908080808081a1f051f1e19081a06051809090909091b1e191a0518091b061e051f1e1f051e0520181b1f1f1e25`, img`
-        . . 2 2 2 2 2 . . 2 2 2 2 2 . . 
+    tiles.setTilemap(tiles.createTilemap(hex`100010000e0f19171717172828171717171a261e0419150c09090923230909090b161a201e071506290f0e0f0f0e0f29071606211e0715060f1324131224130f0716061f210715060e1103241222110e0716061e1f0715060f1211122411120f0716061e1f0715060e2412131213140e0716061f1e181506290f0e13110e0f2907160621051f150a0808081d1d0808080d161b211a1e181c1c1c1c10101c1c1c1c1b10200605171e050117101f1021211010270f0605091f0e0f09051917171a0f0e0f290602211e1f1e1f21181c1c1b1e051f0f061e1908080808081a1f051f1e19081a06051809090909091b1e191a0518091b061e051f1e1f051e0520181b1f1f1e25`, img`
+        2 2 2 2 2 2 2 . . 2 2 2 2 2 . . 
         . 2 2 2 2 2 2 . . 2 2 2 2 2 2 . 
         . 2 2 2 . . . . . . . . 2 2 2 . 
         . 2 2 2 . . . . . . . . 2 2 2 . 
@@ -135,7 +135,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile15, function (sprite, locatio
     game.splash("You know I'm sapient")
     game.splash("You cannot defeat me")
     if (Panther_Power < 3) {
-        game.splash("subscribe to my onlyfans :)")
+        game.splash("I'll share this on my tiktok")
         info.changeLifeBy(-1)
         music.wawawawaa.play()
     } else {
@@ -203,7 +203,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile11, function (sprite, locatio
     info.changeScoreBy(1)
     music.powerUp.play()
     Christlike += 1
-    tiles.setTileAt(tiles.getTileLocation(1, 0), sprites.dungeon.floorLight0)
+    tiles.setTileAt(tiles.getTileLocation(0, 1), sprites.dungeon.floorLight0)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, location) {
     info.changeScoreBy(1)
@@ -231,7 +231,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile27, function (sprite, locatio
         game.splash("We still need 6+", "")
     }
     if (1 == Six_Plus) {
-        game.splash("We need the diving sandwich")
+        game.splash("We need the divine sandwich")
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
@@ -285,13 +285,13 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile6, function (sprite, location
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile18, function (sprite, location) {
     if (bossy1 == 0) {
-        game.splash("I will lead you to safety")
+        game.splash("Save me", "I can lead you to safety!")
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
         bossy1 += 1
+    }
+    if (lang1 == 0) {
+        game.splash("You must speak with the other")
     } else {
-        if (lang1 == 0) {
-            game.splash("You must speak with the other")
-        }
         game.splash("Thank you for believing me")
         game.splash("You Died")
         info.changeLifeBy(-3)
@@ -323,13 +323,13 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function 
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, location) {
     if (lang1 == 0) {
-        game.splash("I will lead you to safety")
+        game.splash("Save me", "I can lead you to safety!")
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
         lang1 += 1
+    }
+    if (bossy1 == 0) {
+        game.splash("You must speak with the other")
     } else {
-        if (bossy1 == 0) {
-            game.splash("You must speak with the other")
-        }
         game.splash("Thank you for saving me")
         game.splash("Now I can go back to destroying youtube")
         info.changeScoreBy(1)
@@ -383,19 +383,22 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile13, function (sprite, locatio
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
     if (Rodent_Companion == 0) {
-        game.splash("Doors are locked", "")
-        game.splash("There is a rat-sized hole that leads to the other side")
-        tiles.setWallAt(tiles.getTileLocation(7, 8), true)
-        tiles.setWallAt(tiles.getTileLocation(8, 8), true)
+        if (big_brain == 1) {
+            game.splash("Doors are locked", "")
+            game.splash("There is a rat-sized hole that leads to the other side")
+            tiles.setWallAt(tiles.getTileLocation(7, 8), true)
+            tiles.setWallAt(tiles.getTileLocation(8, 8), true)
+            big_brain += 2
+        }
     } else {
-        if (big_brain == 2) {
+        if (big_brain == 3) {
             game.splash("Matt Rodent scurries through the hole")
             game.splash("The gates begin to open")
             game.splash("Two Guardians Block Your Path")
             game.splash("One tells only trues", "The other only lies")
+            big_brain += 2
         }
     }
-    big_brain += 1
 })
 let Noodle_Energy = 0
 let Bone_Juice = 0
