@@ -169,6 +169,11 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile34": {
+        "data": "hwQQABAAAABUJUQiJCJSIlVCJCQlJVIkJSJSJSRUIkREUkUiIlIlRSJFIv//IiQlIiTyd3cvQiJFIn+ZmfdSRCIkf/mf91IlJCV/+Z/3IkJFQn+ZmfciJFIk8nd3L1QlJEUi//8iVSJVUiQiIkQiJFQiRSVUJEJUVEQiVCUkJEUkVSJEIkJUJQ==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

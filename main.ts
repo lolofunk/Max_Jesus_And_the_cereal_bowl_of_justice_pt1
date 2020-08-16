@@ -1,9 +1,15 @@
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    game.splash("6+")
+    game.splash("6+", "That is all")
     info.changeScoreBy(6)
     music.powerUp.play()
     Six_Plus += 6
     tiles.setTileAt(tiles.getTileLocation(1, 14), sprites.dungeon.floorDarkDiamond)
+    if (0 == Bone_Juice) {
+        game.splash("We still need bone juice")
+    }
+    if (1 == Bone_Juice) {
+        game.splash("We need the diving sandwich")
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile30, function (sprite, location) {
     if (Divine_Sandwich == 0) {
@@ -40,6 +46,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile14, function (sprite, locatio
     scene.cameraShake(4, 100)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (sprite, location) {
+    info.stopCountdown()
     tiles.setTilemap(tiles.createTilemap(hex`10001000030404040406090e0e0a030404040406020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05020d0d0d0d050901010a020c0c0c0c05080d0d0d0d07090b0b0a080c0c0c0c07`, img`
         2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 
         2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 
@@ -82,7 +89,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     info.stopCountdown()
     Stage_Level = 2
     info.setLife(3)
-    tiles.setTilemap(tiles.createTilemap(hex`1000100024041b191919192d2d191919191c2b212206170e0b0b0b28280b0b0b0d1807212106170810111011111011110918070521061708111529151429151109180722240617081013032914271310091807212206170811141314291314110918071222061708102914151415161009180712210617081111101513101110091807050522170c0a0a0a1f1f0a0a0a0f18201220211a1e1e1e1e12121e1e1e1e1d122325052621050120122212242412122c26250526222020200525252520202520262002242122212224252526202105222325212025262020202022052221202026200520202620202620212025052020262521052221220521052326202222212a`, img`
+    tiles.setTilemap(tiles.createTilemap(hex`10001000210419171717172828171717171a261e1f19150c09090923230909090b161a201e071506290f0e0f0f0e0f29071606211e0715060f1324131224130f0716061f210715060e1103241222110e0716061e1f0715060f1211122411120f0716061e1f0715060e2412131213140e0716061f1e181506290f0e13110e0f2907160621051f150a0808081d1d0808080d161b211a1e181c1c1c1c10101c1c1c1c1b10200605171e050117101f1021211010270f0605091f0e0f09051917171a0f0e0f290602211e1f1e1f21181c1c1b1e051f0f061e1908080808081a1f051f1e19081a06051809090909091b1e191a0518091b061e051f1e1f051e0520181b1f1f1e25`, img`
         . . 2 2 2 2 2 . . 2 2 2 2 2 . . 
         . 2 2 2 2 2 2 . . 2 2 2 2 2 2 . 
         . 2 2 2 . . . . . . . . 2 2 2 . 
@@ -99,8 +106,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
         2 . 2 2 2 2 2 2 2 . . . . 2 2 2 
         2 . 2 2 2 2 2 2 2 . 2 2 . 2 2 2 
         2 . . . . . . . . . 2 2 . . . . 
-        `, [myTiles.transparency16,myTiles.tile5,myTiles.tile8,myTiles.tile10,myTiles.tile11,sprites.dungeon.floorLight0,sprites.dungeon.doorLockedEast,sprites.dungeon.doorLockedWest,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.hazardLava0,sprites.dungeon.hazardLava1,sprites.dungeon.floorMixed,sprites.dungeon.floorDark0,sprites.dungeon.floorDark1,sprites.dungeon.floorDark4,sprites.dungeon.floorDark3,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.greenOuterNorth0,sprites.dungeon.doorOpenNorth,sprites.castle.rock2,sprites.dungeon.floorLight1,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight3,sprites.dungeon.floorLight4,sprites.castle.rock0,sprites.castle.rock1,myTiles.tile18,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark5,sprites.dungeon.stairWest,myTiles.tile19,myTiles.tile20,sprites.dungeon.stairNorth], TileScale.Sixteen))
+        `, [myTiles.transparency16,myTiles.tile5,myTiles.tile8,myTiles.tile10,myTiles.tile11,sprites.dungeon.floorLight0,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.hazardLava0,sprites.dungeon.hazardLava1,sprites.dungeon.floorMixed,sprites.dungeon.floorDark0,sprites.dungeon.floorDark1,sprites.dungeon.floorDark4,sprites.dungeon.floorDark3,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.greenOuterNorth0,sprites.dungeon.doorOpenNorth,sprites.dungeon.floorLight1,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight3,sprites.dungeon.floorLight4,myTiles.tile18,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark5,sprites.dungeon.stairWest,myTiles.tile19,myTiles.tile20,sprites.dungeon.stairNorth,myTiles.tile34], TileScale.Sixteen))
     game.splash("LEVEL 2")
+    info.startCountdown(90)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile29, function (sprite, location) {
     game.splash("Watch out for the fireballs!")
@@ -219,6 +227,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile27, function (sprite, locatio
     music.powerUp.play()
     Bone_Juice += 1
     tiles.setTileAt(tiles.getTileLocation(14, 14), sprites.dungeon.floorDarkDiamond)
+    if (0 == Six_Plus) {
+        game.splash("We still need 6+", "")
+    }
+    if (1 == Six_Plus) {
+        game.splash("We need the diving sandwich")
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.splash("Feel the heat")
@@ -226,10 +240,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sp
     tiles.placeOnTile(mySprite, tiles.getTileLocation(15, 15))
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedSouth, function (sprite, location) {
-    info.stopCountdown()
-    info.setLife(99)
+    info.startCountdown(150)
+    info.setLife(10)
     Stage_Level = 4
-    tiles.setTilemap(tiles.createTilemap(hex`100010000a0d0d0d0d0d0d0d140d0d0d0d0d0d090705030f0f190f020f0f190f020f170807031a1c020f1a1f1f1c0f0f1a1c0f08070f1b1d0f0f1b1e1e1d0f0f1b1d0208070f0f0f170f010f0f010f170f0f0f0807010f020f170f0f0f0f170f0f0f0108070f0f0f010f010f0f010f010f0f0f0807171a1c0f0f0f10110f0f021a1c0f0807021b1d0f0f0f12130f0f0f1b1d1708070f0f0f010f010f0f010f010f0f0f0807010f0f0f170f0f0f0f170f020f010807150f0f170f010f02010f170f0f1508070f1a1c0f0f0f01010f0f0f1a1c0208070f1b1d0f0f010f0f010f0f1b1d0f0807040f0f17010f020f180115021716080b0e0e0e0e0e0c06060b0e0e0e0e0e0c`, img`
+    tiles.setTilemap(tiles.createTilemap(hex`100010000a0d0d0d0d0d0d0d140d0d0d0d0d0d090705030f171917020f171917020f170807031a1c02171a1f1f1c170f1a1c0f08070f1b1d0f0f1b1e1e1d0f0f1b1d0208070f0f17010f010f17010f010f0f0f0807010f020f170f0f0f0f170f0f0f0108070f0f0f010f01170f010f010f0f0f0807171a1c0f0f0f10110f0f021a1c0f0807021b1d0f0f0f1213170f0f1b1d1708070f0f0f010f010f0f010f010f0f0f0807010f0f0f170f0f0f0f170f020f010807150f0f010f010f02010f010f0f1508070f1a1c0f0f0f17010f0f0f1a1c0208070f1b1d0f0f010f0f010f0f1b1d0f0807040f0f17010f020f180115021716080b0e0e0e0e0e0c06060b0e0e0e0e0e0c`, img`
         2 2 2 2 2 2 2 2 . 2 2 2 2 2 2 2 
         2 . . . . . . . . . . . . . . 2 
         2 . 2 2 . . 2 2 2 2 . . 2 2 . 2 
@@ -421,7 +435,7 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 120, 120)
 scene.setBackgroundColor(15)
-tiles.setTilemap(tiles.createTilemap(hex`100010002a1614160b0c0d1414162b14141514150b0c0e1414161516071216090a1411141416151409080808080a16090a142516150b0d11141414031615141116090a1514070f0c0c0c0c0d1607090a140712141c1b1c171b1c1b07141516141514072b220713121007171210111210131611161907191902071e2222221d102415071603191912190720111211181110071315190f0c0d190720120112181b17031b03191007101907201111111807101b12171919071119071f2121211a10071c071c10190f0e1909080808080a13101b101b111907101919191919041010111c172307190f08080a1911100405040410120712191919191919191906130728292627`, img`
+tiles.setTilemap(tiles.createTilemap(hex`100010002a1614160b0c0d1414162b14141514150b0c0e1414161516071216090a1411141416151409080808080a16090a142516150b0d11141414031615141116090a1514070f0c0c0c0c0d1607090a140712141c1b1c171b1c1b07141516141514072b220713121007171210111210131611161907191902071e2222221d102415071603191912190720111211181110071315190f0c0d190720120112181b17031b03191007101907201111111807101b12171919071119071f2121211a10071c071c10190f0e0709080808080a13101b101b1119072c2d07191919041010111c172307190f08080a1911100405040410120712191919191919191906130728292627`, img`
     . . . . 2 2 2 . . . . . . . . . 
     2 2 2 . . . . . 2 2 . 2 2 . 2 . 
     . . . . 2 2 2 2 2 2 . 2 2 . . . 
@@ -434,11 +448,11 @@ tiles.setTilemap(tiles.createTilemap(hex`100010002a1614160b0c0d1414162b141415141
     . 2 2 2 . 2 . 2 . 2 . . . . . . 
     . 2 2 2 . 2 . 2 . 2 . 2 2 . 2 . 
     . . 2 2 . 2 . . . . . 2 2 . 2 . 
-    2 . 2 2 . 2 2 2 2 2 2 . 2 . 2 . 
-    2 . 2 2 . . . . . . 2 2 2 . . . 
+    2 . 2 2 2 2 2 2 2 2 2 . 2 . 2 . 
+    2 . 2 2 2 2 . . . . 2 2 2 . . . 
     2 . 2 2 2 2 . 2 2 . . . . 2 2 2 
     2 . . . . . . . . . 2 2 . . . . 
-    `, [myTiles.transparency16,myTiles.tile6,myTiles.tile4,myTiles.tile7,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight1,sprites.dungeon.floorLight0,sprites.builtin.forestTiles0,sprites.builtin.forestTiles2,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles21,sprites.builtin.forestTiles22,sprites.builtin.forestTiles23,sprites.builtin.forestTiles20,sprites.builtin.forestTiles16,sprites.builtin.forestTiles4,sprites.castle.saplingPine,sprites.castle.saplingOak,sprites.castle.shrub,sprites.castle.tileDarkGrass3,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass1,sprites.castle.tileGrass1,sprites.castle.tilePath6,sprites.castle.tilePath5,sprites.castle.tilePath9,sprites.castle.tileGrass3,sprites.castle.tileGrass2,sprites.castle.tilePath3,sprites.castle.tilePath1,sprites.castle.tilePath7,sprites.castle.tilePath4,sprites.castle.tilePath8,sprites.castle.tilePath2,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.dungeon.stairLarge,sprites.dungeon.floorMixed,sprites.dungeon.floorDark3,sprites.dungeon.collectibleInsignia,myTiles.tile16], TileScale.Sixteen))
+    `, [myTiles.transparency16,myTiles.tile6,myTiles.tile4,myTiles.tile7,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight1,sprites.dungeon.floorLight0,sprites.builtin.forestTiles0,sprites.builtin.forestTiles2,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles21,sprites.builtin.forestTiles22,sprites.builtin.forestTiles23,sprites.builtin.forestTiles20,sprites.builtin.forestTiles16,sprites.builtin.forestTiles4,sprites.castle.saplingPine,sprites.castle.saplingOak,sprites.castle.shrub,sprites.castle.tileDarkGrass3,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass1,sprites.castle.tileGrass1,sprites.castle.tilePath6,sprites.castle.tilePath5,sprites.castle.tilePath9,sprites.castle.tileGrass3,sprites.castle.tileGrass2,sprites.castle.tilePath3,sprites.castle.tilePath1,sprites.castle.tilePath7,sprites.castle.tilePath4,sprites.castle.tilePath8,sprites.castle.tilePath2,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,sprites.dungeon.stairLarge,sprites.dungeon.floorMixed,sprites.dungeon.floorDark3,sprites.dungeon.collectibleInsignia,myTiles.tile16,myTiles.tile32,myTiles.tile33], TileScale.Sixteen))
 tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleInsignia)
 scene.cameraFollowSprite(mySprite)
 info.setLife(1)
